@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>View Policy</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, rgb(158, 248, 197), rgb(245, 169, 193));
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            margin-top: 50px;
+            background: rgb(64, 128, 128);
+            padding: 20px;
+            border-radius: 8px;
+            width: 50%;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            text-align: left;
+            line-height: 1.8;
+        }
+
+        .back-btn {
+            display: block;
+            margin-top: 20px;
+            padding: 10px;
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .back-btn:hover {
+            background: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Policy Details</h1>
+        <div class="details">
+            <p><strong>Policy ID:</strong> <span th:text="${policy.policyId}"></span></p>
+            <p><strong>Customer ID:</strong> <span th:text="${policy.customerId}"></span></p>
+            <p><strong>Policy Name:</strong> <span th:text="${policy.policyName}"></span></p>
+            <p><strong>Duration:</strong> <span th:text="${policy.policyDuration}"></span> years</p>
+            <p><strong>Premium:</strong> $<span th:text="${policy.premiumAmount}"></span></p>
+            <p><strong>Maturity Amount:</strong> $<span th:text="${policy.maturityAmount}"></span></p>
+            <p><strong>Annuity Term:</strong> <span th:text="${policy.annuityTerm}"></span></p>
+        </div>
+        <a href="/policies/list" class="back-btn">Back to Policies</a>
+    </div>
+</body>
+</html>
